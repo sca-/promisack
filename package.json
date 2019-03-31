@@ -1,12 +1,21 @@
 {
   "name": "promisack",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.1.0",
+  "description": "A lightweight library for managing and viewing the completion process of multiple concurrent promises",
   "main": "index.js",
+  "files": ["index.js", "querable-promise.js", "node/progress.js", "browser/progress.js", "README.md"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:test": "webpack --entry ./browser/test/index.js --output ./browser/test/bundle.js"
   },
   "keywords": [],
   "author": "Semenov Evgeniy <semenov@tutu.ru>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "progress": "^2.0.3",
+    "progressbar.js": "^1.0.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  }
 }

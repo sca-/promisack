@@ -1,18 +1,18 @@
 const makeQuerablePromise = require('./querable-promise');
 
 class Promisack {
-    constructor(promises = []) {
+    constructor(promises = [], onChange) {
+        this.onChange = onChange;
         this.promises = [];
         this.add(promises);
     }
 
     prepare(promise) {
-        return this.onChange
-            ? makeQuerablePromise(promise.then((result) => {
-                this.onChange(this.status());
-                return result;
-            }))
-            : makeQuerablePromise(promise);
+        const qPromise = makeQuerablePromise(promise);
+        if(this.onChange) {
+            qPromise.then(() => this.onChange(this.status()));
+        }
+        return qPromise; 
     }
 
     add(promise) {
