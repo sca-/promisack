@@ -1,9 +1,19 @@
 {
   "name": "promisack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A lightweight library for managing and viewing the completion process of multiple concurrent promises",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sca-/promisack.git"
+  },
   "main": "index.js",
-  "files": ["index.js", "querable-promise.js", "node/progress.js", "browser/progress.js", "README.md"],
+  "files": [
+    "index.js",
+    "querable-promise.js",
+    "node/progress.js",
+    "browser/progress.js",
+    "README.md"
+  ],
   "scripts": {
     "build:test": "webpack --entry ./browser/test/index.js --output ./browser/test/bundle.js"
   },
